@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="style.css" />
+    <title>블로그</title>
+  </head>
+  <body>
+    <h1>환영합니다.</h1>
+    <div id="root"></div>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <script>
+      function MyButton(props){
+        const [isClicked, setIsClicked] = React.useState(false)
+
+        return React.createElement(
+          'button',
+          {onClick:()=>setIsClicked(true)},
+          isClicked?'Clicked':'Click here!'
+        )
+      }
+      const domContainer = document.querySelector("#root")
+      const root = ReactDOM.createRoot(domContainer)
+      root.render(React.createElement(MyButton))
+
+    </script>
+  </body>
+</html>
